@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors()); 
 
 // Frontend ki HTML file ko serve karne ke liye
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'index.html')));
 
 // ==========================================
 // 1. MONGODB ONLINE DATABASE CONNECTION
