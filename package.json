@@ -1,0 +1,20 @@
+{
+  "name": "student",
+  "version": "1.0.0",
+  "description": "this is server for student services",
+  "license": "ISC",
+  "author": "rupesh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+    
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.3"
+  }
+}
