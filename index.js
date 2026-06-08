@@ -10,13 +10,16 @@ const app = express();
 app.use(express.json()); 
 app.use(cors()); 
 
-// Frontend ki HTML file ko serve karne ke liye
-app.use(express.static(path.join(__dirname, 'index.html')));
+// ==========================================
+// FRONTEND SERVE KARNE KA SAHI TARIKA (Bina public folder ke)
+// ==========================================
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // ==========================================
 // 1. MONGODB ONLINE DATABASE CONNECTION
 // ==========================================
-// Yeh line tumhari .env file se MONGO_URI le rahi hai
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('🔥 MongoDB Online Database Connected Successfully!'))
     .catch((err) => console.log('🚨 Database connection error:', err));
@@ -31,7 +34,6 @@ const studentSchema = new mongoose.Schema({
     city: String
 });
 
-// Collection ka naam 'students' ban jayega autoamtically
 const Student = mongoose.model('Student', studentSchema);
 
 // ==========================================
