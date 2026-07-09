@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+console.log(process.platform);
+
 // ==========================================
 // 1. MONGODB ONLINE DATABASE CONNECTION
 // ==========================================
